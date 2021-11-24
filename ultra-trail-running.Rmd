@@ -9,20 +9,37 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+#Reading in the data
+```{r}
+ultra_rankings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/ultra_rankings.csv')
+race <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-26/race.csv')
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+#Prepping the data 
+```{r}
+install.packages("pacman")
+library(pacman)
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("janitor")
+library(janitor)
+```
+#Data Exploration
+```{r}
+glimpse(ultra_rankings)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+glimpse(race)
+```
+
+```{r}
+skim_without_charts(ultra_rankings)
+```
+
+
+```{r}
+skim_without_charts(race)
+```
