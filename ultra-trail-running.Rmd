@@ -1,11 +1,13 @@
 ---
 title: "ultra-trail-running"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
+
+```{r message=FALSE, warning=FALSE, error=FALSE}```
 
 ## R Markdown
 
@@ -17,14 +19,7 @@ race <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidyt
 ```
 
 #Prepping the data 
-```{r}
-install.packages("pacman")
-library(pacman)
-install.packages("tidyverse")
-library(tidyverse)
-install.packages("janitor")
-library(janitor)
-```
+
 #Data Exploration
 ```{r}
 glimpse(ultra_rankings)
@@ -35,11 +30,6 @@ glimpse(ultra_rankings)
 glimpse(race)
 ```
 
-```{r}
-skim_without_charts(ultra_rankings)
-```
 
 
-```{r}
-skim_without_charts(race)
-```
+
